@@ -61,6 +61,6 @@ def display_page(pathname):
 if __name__ == '__main__':
     print("WARNING: If this execution does not work when trying locally, remember to check the `experiment_config.py` and comment `requests_pathname_prefix`")
     app.run_server( debug=True, 
-                    use_reloader=True, port=8055)  # Turn off reloader if inside Jupyter
+                    use_reloader=True)  # Turn off reloader if inside Jupyter
 
     

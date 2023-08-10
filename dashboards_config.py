@@ -18,7 +18,8 @@ import extremum_config
 #from demoapps.time_svm import time_svm
 from demoapps.privatesvm import privatesvm
 from demoapps.tutorial import tutorial
-from demoapps.Demo_page import Demo_page
+from demoapps.demo_page import demo_page
+# from demoapps.time_series import time_series
 from _layouts import index, about
 # =============================================================================
 # Functions
@@ -82,7 +83,8 @@ class DashboardsURL(enum.Enum):
     #TimeSVM="timesvm"
     PrivateSVM = "privatesvm"
     Tutorial = "tutorial"
-    Demo_Page = "Demo_Page"
+    Demo_page = "demo_page"
+    # Time_series = "time_series"
 
     def __str__(self):
         return str(self.value)
@@ -116,18 +118,27 @@ tutorial = DashboardExtremum(tutorial.layout,
                                imagepath="/images/private_SVM_overview_nontechnical.png",
                                )
 
-Demo_page = DashboardExtremum(Demo_page.layout,
-                               title="MNIST Page",
-                               url=DashboardsURL.Demo_Page,
+demo_page = DashboardExtremum(demo_page.layout,
+                               title="demo_page",
+                               url=DashboardsURL.Demo_page,
                                description="""
 
                                         """,
                                imagepath="/images/private_SVM_overview_nontechnical.png",
                                )
 
-# Contains all the dashboards that exist in the application
-dashboards = [privatesvm, tutorial, Demo_page] #time_svm, demo_dami_analytics, app1, app2, breastcancer
+# time_series = DashboardExtremum(time_series.layout,
+#                                title="Time_series",
+#                                url=DashboardsURL.Time_series,
+#                                description="""
+#
+#                                         """,
+#                                imagepath="/images/private_SVM_overview_nontechnical.png",
+#                                )
 
+# Contains all the dashboards that exist in the application
+# dashboards = [privatesvm, tutorial, demo_page, time_series] #time_svm, demo_dami_analytics, app1, app2, breastcancer
+dashboards = [privatesvm, tutorial, demo_page]
 # Used to get the respective layout when the url changes.
 dashboards_info = { get_url_from_dashboard(dboard) : dboard.layout for dboard in dashboards}
 

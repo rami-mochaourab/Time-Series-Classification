@@ -719,8 +719,6 @@ def update_image_src(clickData, btn1, beta, proba):
         datapoint = np.array([0, 0])
     else:
         datapoint = np.array([clickData['points'][0]['x'], clickData['points'][0]['y']])
-    # print('clickData')
-    # print(clickData)
     if 'submit-val' in changed_id:
         seed = random.randint(1, 99)
     else:

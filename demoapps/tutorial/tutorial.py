@@ -139,4 +139,4 @@ def update_image_src(sample):
     return fig
 # Running the server
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8055)
+    app.run_server(debug=True)
